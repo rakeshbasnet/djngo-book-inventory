@@ -1,0 +1,11 @@
+{% extends 'inventory/base.html' %}
+
+{% block title %}Home - Book Inventory Management{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">Welcome to the Book Inventory Management System</h1>
+    <div class="text-center mt-4">
+        <a href="{% url 'add_book' %}" class="btn btn-primary btn-lg">Add Books</a>
+        <a href="{% url 'view_books' %}" class="btn btn-success btn-lg">View Books</a>
+    </div>
+{% endblock %}

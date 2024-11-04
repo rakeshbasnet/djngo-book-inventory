@@ -1,0 +1,74 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif; /* Set the font for the document */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    min-height: 100vh; /* Full height for the body */
+    background-color: #f4f4f4; /* Light gray background */
+}
+
+/* Container styles */
+.container {
+    max-width: 600px; /* Maximum width of the container */
+    width: 100%; /* Full width for smaller devices */
+    background: white; /* White background for the container */
+    padding: 20px; /* Padding inside the container */
+    margin: 20px; /* Margin around the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Header styles */
+h1, h2, h3 {
+    text-align: center; /* Center align text */
+    color: #333; /* Dark gray color for text */
+}
+
+/* Form label styles */
+form label {
+    display: block; /* Block display for labels */
+    margin: 10px 0 5px; /* Margin around labels */
+}
+
+/* Input and button styles */
+form input, form button {
+    width: 100%; /* Full width for inputs and buttons */
+    padding: 8px; /* Padding inside inputs and buttons */
+    margin-bottom: 10px; /* Space below inputs and buttons */
+    border: 1px solid #ccc; /* Light gray border */
+}
+
+/* Button styles */
+.button, form button {
+    background-color: #4CAF50; /* Green background for buttons */
+    color: white; /* White text color */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Button hover effect */
+.button:hover, form button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Table styles */
+.table, table {
+    width: 100%; /* Full width for tables */
+    border-collapse: collapse; /* Remove space between cells */
+    margin: 10px 0; /* Margin around the table */
+}
+
+/* Border and padding for table cells */
+table, th, td {
+    border: 1px solid #ddd; /* Light gray border for table */
+    padding: 8px; /* Padding inside table cells */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
