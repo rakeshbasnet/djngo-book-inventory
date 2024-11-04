@@ -9,17 +9,21 @@
             <h4 class="mb-0">Add New Book</h4>
         </div>
         <div class="card-body">
+            <!-- Display messages if there are any -->
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert alert-danger">{{ message }}</div>
                 {% endfor %}
             {% endif %}
+            
+            <!-- Start of form -->
             <form method="post">
                 {% csrf_token %}
-
+                
+                <!-- Title Field -->
                 <div class="form-group">
                     <label for="id_title">Title</label>
-                    <input type="text" name="title" id="id_title" class="form-control" required>
+                    <input type="text" name="title" id="id_title" class="form-control" value="{{ form.title.value|default_if_none:'' }}" required>
                     {% if form.title.errors %}
                         <div class="text-danger">
                             {% for error in form.title.errors %}
@@ -29,9 +33,10 @@
                     {% endif %}
                 </div>
 
+                <!-- Author Field -->
                 <div class="form-group">
                     <label for="id_author">Author</label>
-                    <input type="text" name="author" id="id_author" class="form-control" required>
+                    <input type="text" name="author" id="id_author" class="form-control" value="{{ form.author.value|default_if_none:'' }}" required>
                     {% if form.author.errors %}
                         <div class="text-danger">
                             {% for error in form.author.errors %}
@@ -41,9 +46,10 @@
                     {% endif %}
                 </div>
 
+                <!-- Genre Field -->
                 <div class="form-group">
                     <label for="id_genre">Genre</label>
-                    <input type="text" name="genre" id="id_genre" class="form-control" required>
+                    <input type="text" name="genre" id="id_genre" class="form-control" value="{{ form.genre.value|default_if_none:'' }}" required>
                     {% if form.genre.errors %}
                         <div class="text-danger">
                             {% for error in form.genre.errors %}
@@ -53,9 +59,10 @@
                     {% endif %}
                 </div>
 
+                <!-- Publication Date Field -->
                 <div class="form-group">
                     <label for="id_publication_date">Publication Date</label>
-                    <input type="date" name="publication_date" id="id_publication_date" class="form-control" required>
+                    <input type="date" name="publication_date" id="id_publication_date" class="form-control" value="{{ form.publication_date.value|default_if_none:'' }}" required>
                     {% if form.publication_date.errors %}
                         <div class="text-danger">
                             {% for error in form.publication_date.errors %}
@@ -65,18 +72,20 @@
                     {% endif %}
                 </div>
 
+                <!-- ISBN Field -->
                 <div class="form-group">
                     <label for="id_isbn">ISBN</label>
-                    <input type="text" name="isbn" id="id_isbn" class="form-control" required>
+                    <input type="text" name="isbn" id="id_isbn" class="form-control" value="{{ form.isbn.value|default_if_none:'' }}" required>
                     {% if form.isbn.errors %}
                         <div class="text-danger">
                             {% for error in form.isbn.errors %}
-                                <p>{{ form.isbn.errors.0 }}</p>
+                                <p>{{ error }}</p>
                             {% endfor %}
                         </div>
                     {% endif %}
                 </div>
 
+                <!-- Submit Button -->
                 <button type="submit" class="btn btn-primary btn-block">Add Book</button>
             </form>
         </div>
