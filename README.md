@@ -12,7 +12,7 @@
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/rakeshbasnet/djngo-book-inventory.git
-   cd BookInventorySystem
+   cd djngo-book-inventory
 2. **Set Up Virtual Environment**:
    ```bash
    python -m venv venv

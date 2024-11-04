@@ -71,7 +71,7 @@
                     {% if form.isbn.errors %}
                         <div class="text-danger">
                             {% for error in form.isbn.errors %}
-                                <p>{{ error }}</p>
+                                <p>{{ form.isbn.errors.0 }}</p>
                             {% endfor %}
                         </div>
                     {% endif %}

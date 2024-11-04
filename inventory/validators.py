@@ -1,5 +1,5 @@
+from django.core.exceptions import ValidationError
 import re
-
 
 def validate_isbn(value):
     # Regex for ISBN-10 and ISBN-13, allowing hyphens
@@ -12,14 +12,13 @@ def validate_isbn(value):
     # Check if it matches ISBN-10
     if re.match(isbn10_regex, value):
         if not is_valid_isbn10(normalized_value):
-            raise ValueError(f"Invalid ISBN-10 number: {value}")
+            raise ValidationError("Invalid ISBN-10 number.")
     # Check if it matches ISBN-13
     elif re.match(isbn13_regex, value):
         if not is_valid_isbn13(normalized_value):
-            raise ValueError(f"Invalid ISBN-13 number: {value}")
+            raise ValidationError("Invalid ISBN-13 number.")
     else:
-        raise ValueError(f"Invalid ISBN format: {value}")
-
+        raise ValidationError("Invalid ISBN format.")
 
 def is_valid_isbn10(isbn):
     if len(isbn) != 10:
@@ -29,7 +28,6 @@ def is_valid_isbn10(isbn):
     if checksum == 10:
         checksum = 'X'
     return str(checksum) == isbn[-1]
-
 
 def is_valid_isbn13(isbn):
     if len(isbn) != 13:
